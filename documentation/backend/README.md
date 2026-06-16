@@ -65,11 +65,24 @@ Generate custom Prisma Client (inside `backend/`):
 bunx prisma generate
 ```
 
-Synchronize the database with the schemas (inside `backend/`):
+Synchronize the database with the schemas (for prototyping - inside `backend/`):
 
 ```bash
 bunx prisma db push
 ```
+
+Generate and apply database migrations (inside `backend/`):
+
+```bash
+bunx prisma migrate dev --name <migration_name>
+```
+
+For example, to run the initial migration:
+
+```bash
+bunx prisma migrate dev --name init_user_model
+```
+
 
 Start Prisma Studio (visual database editor inside `backend/` - recommended with explicit URL to avoid Bun stream issues):
 
